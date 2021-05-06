@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.ayustark.tictactoe"
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.android.material:material:1.4.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.firebase:firebase-core:18.0.3'
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation 'com.google.firebase:firebase-auth:20.0.4'
+    implementation 'com.google.firebase:firebase-database:19.7.0'
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'
