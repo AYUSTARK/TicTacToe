@@ -51,7 +51,6 @@ class Login : AppCompatActivity() {
         loadMain()
     }
 
-
     private fun loadMain() {
         val currentUser = mAuth!!.currentUser
         if (currentUser != null) {
